@@ -15,8 +15,11 @@ export default function Basket({ basket, setBasket, total, setTotal }) {
             <b
               onClick={() => {
                 setBasket([...basket.filter((item) => item.id !== product.id)]);
+                // basketin içeriğini çarpıya tıkladığımız ürün dışındakiler olarak güncelliyoruz ve o sepetten silinmiş oluyor
+
                 let result = total - product.price;
                 setTotal(result);
+                // sepet toplam fiyatı düşürerek güncelliyoruz
               }}
             >
               X

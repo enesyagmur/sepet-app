@@ -17,9 +17,12 @@ export default function Product({
         price: product.price,
       },
     ]);
+    // kodun anlamı, basket dizisinin mevcut hali + virgülden sonra girdiğimi eleman
+
     let result = total;
     result += product.price;
     setTotal(result);
+    // mevcut sepet tutarını totalden alıyoruz + üzerine eklediğimiz ürünün fiyatını ekleyerek totali güncelliyoruz
   };
 
   return (

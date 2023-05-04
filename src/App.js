@@ -20,9 +20,9 @@ function App() {
               key={product.id}
               basket={basket}
               setBasket={setBasket}
-              //sepeti güncelleyebilmek için setBasket i yolluyoruz
               setTotal={setTotal}
               total={total}
+              // güncelleme yapmak istediğimiz için  setBasket ve setTotal i de yolluyoruz
             />
           ))}
         </div>
