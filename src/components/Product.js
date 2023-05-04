@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function Product({ product, basket, setBasket }) {
+export default function Product({
+  product,
+  basket,
+  setBasket,
+  setTotal,
+  total,
+}) {
   const addToBasket = () => {
     setBasket([
       ...basket,
@@ -11,6 +17,9 @@ export default function Product({ product, basket, setBasket }) {
         price: product.price,
       },
     ]);
+    let result = total;
+    result += product.price;
+    setTotal(result);
   };
 
   return (

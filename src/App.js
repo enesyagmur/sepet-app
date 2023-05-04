@@ -3,12 +3,12 @@ import products from "./products.json";
 import Header from "./components/Header";
 import Product from "./components/Product";
 import Basket from "./components/Basket";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  useEffect(() => {}, [basket]);
-  // bu kodun kullanım amacı basket te değişiklik olduğunda console yazdırması için
+  const [total, setTotal] = useState(0);
+
   return (
     <div className="App">
       <Header />
@@ -21,15 +21,20 @@ function App() {
               basket={basket}
               setBasket={setBasket}
               //sepeti güncelleyebilmek için setBasket i yolluyoruz
+              setTotal={setTotal}
+              total={total}
             />
           ))}
         </div>
       </div>
-      <Basket basket={basket} setBasket={setBasket} />
+      <Basket
+        basket={basket}
+        setBasket={setBasket}
+        total={total}
+        setTotal={setTotal}
+      />
     </div>
   );
 }
 
 export default App;
-
-// 11. dakikadayım

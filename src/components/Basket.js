@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function Basket({ basket, setBasket }) {
+export default function Basket({ basket, setBasket, total, setTotal }) {
   return (
     <div className="mainBasket">
       <div className="showBasket">
         <h2>Basket</h2>
+        <h3 className="price">{total}$</h3>
         {basket.map((product) => (
           <div className="basketList">
             <p>{product.name}</p>
@@ -14,13 +15,14 @@ export default function Basket({ basket, setBasket }) {
             <b
               onClick={() => {
                 setBasket([...basket.filter((item) => item.id !== product.id)]);
+                let result = total - product.price;
+                setTotal(result);
               }}
             >
               X
             </b>
           </div>
         ))}
-        <h5>Toplam</h5>
       </div>
     </div>
   );

@@ -138,3 +138,9 @@ code {
   margin-bottom: 30px;
   border-radius: 5px;
 }
+.mainBasket .showBasket .basketList b:hover {
+  color: red;
+}
+.price {
+  color: gold;
+}
