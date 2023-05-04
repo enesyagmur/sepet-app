@@ -7,9 +7,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  useEffect(() => {
-    console.log(basket);
-  }, [basket]);
+  useEffect(() => {}, [basket]);
   // bu kodun kullanım amacı basket te değişiklik olduğunda console yazdırması için
   return (
     <div className="App">
@@ -27,7 +25,7 @@ function App() {
           ))}
         </div>
       </div>
-      <Basket basket={basket} />
+      <Basket basket={basket} setBasket={setBasket} />
     </div>
   );
 }

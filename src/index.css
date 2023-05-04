@@ -46,7 +46,6 @@ code {
   height: 60px;
   position: absolute;
   margin-top: -60px;
-  border-radius: 0px 0px 5px 5px;
 }
 .productContainer .productBoxs .product .productsInfo p {
   font-weight: bold;
@@ -79,7 +78,8 @@ code {
   cursor: pointer;
   background-color: white;
   border: 1px solid white;
-  box-shadow: 0px 0px 5px 1px grey;
+
+  width: 100%;
   border-radius: 5px;
   font-size: 20px;
   color: #4e73df;
@@ -127,7 +127,6 @@ code {
 .mainBasket .showBasket .basketList {
   display: flex;
   flex-direction: row;
-  align-items: start;
 }
 .mainBasket .showBasket .basketList p {
   display: block;

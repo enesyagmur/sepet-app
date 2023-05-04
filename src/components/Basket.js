@@ -1,17 +1,26 @@
 import React from "react";
 
-export default function Basket({ basket }) {
+export default function Basket({ basket, setBasket }) {
   return (
     <div className="mainBasket">
       <div className="showBasket">
         <h2>Basket</h2>
-        {basket.map((item) => (
+        {basket.map((product) => (
           <div className="basketList">
-            <p>{item.name}</p>
-            <p>{item.price}$</p>
-            <img width={80} src={item.img} alt="" />
+            <p>{product.name}</p>
+            <p>{product.price}$</p>
+
+            <img width={80} src={product.img} alt="" />
+            <b
+              onClick={() => {
+                setBasket([...basket.filter((item) => item.id !== product.id)]);
+              }}
+            >
+              X
+            </b>
           </div>
         ))}
+        <h5>Toplam</h5>
       </div>
     </div>
   );
